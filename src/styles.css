@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply h-screen text-white;
+  background-image: url('./assets/img/bg.jpg');
+  backdrop-filter: blur(2px);
+}

@@ -1,0 +1,15 @@
+.input-field {
+  @apply flex flex-col mb-8;
+}
+
+.input-field input {
+  @apply p-2 rounded outline-0 text-gray-700;
+}
+
+.input-field label {
+  @apply mb-3;
+}
+
+.input-field p {
+  @apply text-red-700;
+}

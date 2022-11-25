@@ -1,0 +1,67 @@
+<div class="container mx-auto px-4 h-full">
+  <div class="flex items-center justify-center h-full">
+    <div class="w-96 bg-gray-900 rounded-md p-10 text-center">
+      <div class="">
+        <h2 class="font-medium uppercase text-3xl mb-4 tracking-wider">
+          Login
+        </h2>
+        <p class="mb-10 text-gray-300">Please enter your login and password!</p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+          <div class="input-field">
+            <input
+              formControlName="email"
+              type="email"
+              id="typeEmailX"
+              class=""
+            />
+            <label class="" for="typeEmailX">Email</label>
+            <p
+              *ngIf="
+                this.loginForm.get('email')?.invalid &&
+                this.loginForm.get('email')?.touched
+              "
+            >
+              <small class="">Email is required</small>
+            </p>
+          </div>
+
+          <div class="input-field">
+            <input
+              formControlName="password"
+              type="password"
+              id="typePasswordX"
+              class=""
+            />
+            <label class="" for="typePasswordX">Password</label>
+            <p
+              *ngIf="
+                this.loginForm.get('password')?.invalid &&
+                this.loginForm.get('password')?.touched
+              "
+            >
+              <small class="">Password is required (min. length = 8)</small>
+            </p>
+          </div>
+          <button
+            class="border-2 rounded py-2 w-full mb-5 hover:bg-white hover:text-gray-800 duration-300 disabled:pointer-events-none"
+            type="submit"
+            [disabled]="this.loginForm.invalid"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+      <div>
+        <p class="">
+          Don't have an account?
+          <a
+            routerLink="../registration"
+            class="text-gray-500 underline hover:text-gray-400 duration-300"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
